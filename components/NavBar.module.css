@@ -1,5 +1,7 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: blueviolet;
+.link {
+  text-decoration: none;
+}
+
+.active {
+  color: chocolate;
 }
