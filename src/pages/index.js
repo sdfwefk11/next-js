@@ -5,15 +5,7 @@ import HeaderTitle from "../../components/HeaderTitle";
 export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `/movies/${id}`
-    );
+    router.push(`/movies/${title}/${id}`);
   };
   return (
     <>
@@ -22,13 +14,7 @@ export default function Home({ results }) {
         {results?.map((res) => (
           <Link
             key={res.id}
-            href={{
-              pathname: `/movies/${res.id}`,
-              query: {
-                title: res.title,
-              },
-            }}
-            as={`/movies/${res.id}`}
+            href={`/movies/${res.title}/${res.id}`}
             onClick={() => onClick(res.id, res.title)}
           >
             <div className="movie">
